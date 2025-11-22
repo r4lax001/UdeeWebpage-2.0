@@ -1,0 +1,789 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css");
+
+/* ===== รีเซ็ต ===== */
+* {
+  box-sizing: border-box;
+  font-family: "Prompt", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f4f4f4 !important;
+  color: #333;
+}
+
+/* ===== Header ===== */
+.header {
+  background: #7c4dff;
+  color: white;
+  padding: 14px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.profile-btn {
+  background: white;
+  color: #7c4dff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.profile-btn:hover {
+  background: #ede7ff;
+}
+
+/* ===== Breadcrumb ===== */
+.breadcrumb {
+  font-size: 14px;
+  color: #777;
+  margin: 20px 40px;
+}
+
+/* ===== Layout ===== */
+.form-preview-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 0 40px 40px;
+}
+
+/* ===== Form Section ===== */
+.form-section {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.form-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #fff;
+  color: #111;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #7c4dff;
+  box-shadow: 0 0 0 2px rgba(124, 77, 255, 0.2);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+}
+
+textarea {
+  resize: none;
+  overflow: hidden;
+  min-height: 80px;
+  line-height: 1.5;
+  transition: height 0.2s ease;
+}
+
+.inline-inputs {
+  display: flex;
+  gap: 12px;
+}
+.inline-inputs > div {
+  flex: 1;
+}
+
+/* ===== Custom Dropdown ===== */
+.custom-select {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.custom-select .selected {
+  padding: 10px;
+  font-size: 14px;
+  color: #111;
+}
+
+.custom-select ul.options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-5px);
+  transition: all 0.25s ease-in-out;
+}
+
+.custom-select.open ul.options {
+  max-height: 300px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 5px 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-select ul.options li {
+  padding: 10px;
+  font-size: 14px;
+  transition: background 0.15s ease;
+  color: #111;
+}
+
+.custom-select ul.options li:hover {
+  background: #f1f1f1;
+}
+
+.custom-select.open .selected {
+  border-bottom: 1px solid #ccc;
+  border-radius: 6px 6px 0 0;
+}
+
+/* ===== Button ===== */
+.submit-btn {
+  margin-top: 10px;
+  background: #7c4dff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.submit-btn:hover {
+  background: #6a3fe8;
+  transform: translateY(-1px);
+}
+
+/* ===== Preview Section ===== */
+.preview-section {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.preview-section h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+/* ===== Tabs ===== */
+.media-tabs {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+.media-tabs .tab {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-weight: 500;
+  color: #666;
+  transition: 0.2s;
+}
+.media-tabs .tab.active {
+  color: #7c4dff;
+  border-bottom: 2px solid #7c4dff;
+}
+
+/* ===== Media Gallery ===== */
+.gallery-item.large.main {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.gallery-item.large.main img,
+.gallery-item.large.main video {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.gallery-item.large.main:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== รูปเล็กแถวล่าง ===== */
+.gallery-small-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.gallery-item.small {
+  flex: 1 1 calc(25% - 8px);
+  max-width: calc(25% - 8px);
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+.gallery-item.small img,
+.gallery-item.small video {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.gallery-item.small:hover {
+  transform: scale(1.05);
+}
+
+/* ===== ช่องสุดท้าย +X ===== */
+.gallery-item.small.more {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery-item.small.more img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  filter: brightness(70%);
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.gallery-item.small.more .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.gallery-item.small.more .overlay span {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.gallery-item.small.more:hover .overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.gallery-item.small.more:hover img {
+  transform: scale(1.05);
+  filter: brightness(60%);
+}
+
+/* ===== ปุ่มลบรูป ===== */
+.remove-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.2s;
+}
+.remove-btn:hover {
+  background: rgba(255, 0, 0, 0.7);
+}
+
+/* ===== ปุ่มเพิ่มไฟล์ ===== */
+.add-media {
+  display: inline-block;
+  color: #7c4dff;
+  font-weight: 500;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.add-media:hover {
+  color: #5e33e8;
+}
+
+/* ===== Popup Lightbox (ภาพเดี่ยว) ===== */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10002;
+}
+.popup-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 85%;
+}
+.popup-content img,
+.popup-content video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+.popup-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.popup-close:hover {
+  color: #7c4dff;
+}
+.gallery-popup-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+.gallery-popup-nav button {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.gallery-popup-nav button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* ===== Popup รวมรูป (Full Gallery Popup) ===== */
+.gallery-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10001;
+  animation: fadeIn 0.25s ease;
+}
+
+/* กล่อง popup หลัก */
+.gallery-popup-content {
+  background: #fff;
+  padding: 40px;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90%;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ปุ่มปิด (X) */
+.gallery-popup-content .popup-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #444;
+  font-size: 28px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.gallery-popup-content .popup-close:hover {
+  color: #7c4dff;
+}
+
+/* ===== การจัดเรียงภาพใน popup ===== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-top: 60px;
+  justify-items: center;
+}
+
+/* แต่ละภาพใน popup รวมรูป */
+.gallery-popup-item {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.gallery-popup-item img,
+.gallery-popup-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.gallery-popup-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+.gallery-popup-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== Scrollbar ===== */
+.gallery-popup-content::-webkit-scrollbar {
+  width: 10px;
+}
+.gallery-popup-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+.gallery-popup-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== Info Section ===== */
+.preview-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #444;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 10px;
+  font-size: 14px;
+  color: #444;
+  margin-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+/* ===== Details Section ===== */
+.details-block {
+  margin-top: 10px;
+}
+.details-block strong {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #333;
+  margin-bottom: 4px;
+}
+.details-text {
+  background: #fff;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid #eee;
+  color: #333;
+  font-size: 14px;
+  white-space: pre-line;
+}
+
+/* ===== Contact Info Section ===== */
+.contact-preview-block {
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  border: 1px solid #eee;
+}
+
+.contact-preview-block strong {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: #444;
+}
+
+.contact-row i {
+  color: #7c4dff;
+  width: 18px;
+}
+
+/* ===== Map Section ===== */
+.address-input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.map-container {
+  width: 100%;
+  height: 280px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+/* ===== Background ===== */
+.main.bg-gray {
+  background: #f4f4f4;
+  padding-bottom: 40px;
+}
+
+/* ===== ฟอร์มเจ้าของประกาศ ===== */
+.owner-info {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  flex: 1;
+}
+
+/* Hint text */
+.hint {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+/* Upload box */
+.upload-box {
+  background: #fafafa;
+  border: 1px dashed #aaa;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.upload-box:hover {
+  background: #f1e8ff;
+  border-color: #7c4dff;
+}
+
+.upload-box input[type="file"] {
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Inline layout */
+.inline-inputs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.inline-inputs > div {
+  flex: 1;
+}
+
+/* ===== ปุ่ม Toggle เจ้าของทรัพย์ / นายหน้า ตัวแทน ===== */
+.announce-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f7f7f7;
+}
+
+.announce-toggle button {
+  flex: 1;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 0;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.2s ease;
+}
+
+.announce-toggle button.active {
+  background: #ede3ff;
+  color: #6a3fe8;
+  font-weight: 600;
+}
+
+.announce-toggle button:not(:last-child) {
+  border-right: 1px solid #dcdcdc;
+}
+
+/* ===== ปุ่ม Toggle ถือครองในนาม ===== */
+.inline-toggle {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background: #f7f7f7;
+}
+
+.inline-toggle button {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.inline-toggle button.active {
+  background: #ede3ff;
+  color: #6a3fe8;
+  font-weight: 600;
+}
+
+.inline-toggle button:not(:last-child) {
+  border-right: 1px solid #dcdcdc;
+}
+
+/* ===== Hover effect ===== */
+.announce-toggle button:hover,
+.inline-toggle button:hover {
+  background: #f0e9ff;
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .form-preview-container {
+    flex-direction: column;
+  }
+  .form-section,
+  .preview-section {
+    width: 100%;
+  }
+  .gallery-item.large.main img {
+    height: 200px;
+  }
+  .gallery-item.small img {
+    height: 80px;
+  }
+  .gallery-popup-content {
+    padding: 20px;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px;
+  }
+  .map-container {
+    height: 220px;
+  }
+}
