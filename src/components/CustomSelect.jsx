@@ -36,7 +36,7 @@ export default function CustomSelect({ options, value, onChange }) {
       {/* Dropdown options */}
       {open && (
         <ul
-          className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-48 overflow-y-auto"
+          className="absolute z-10 w-full mt-1  bg-white border border-gray-300 rounded-lg shadow-lg max-h-48 overflow-y-auto"
         >
           {options.map((opt) => (
             <li
@@ -45,8 +45,8 @@ export default function CustomSelect({ options, value, onChange }) {
                 onChange(opt);
                 setOpen(false);
               }}
-              className={`px-3 py-2 text-sm cursor-pointer hover:bg-mainPurple hover:text-white ${
-                opt === value ? "bg-accentPurple text-white" : "text-gray-700"
+              className={`px-3 py-2 text-sm cursor-pointer hover:bg-mainPurple hover:text-gray-900 ${
+                opt === value ? "bg-accentPurple " : "text-gray-500"
               }`}
             >
               {opt}

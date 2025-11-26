@@ -496,18 +496,19 @@ function InputText({ label, type = "text", placeholder, value, onChange }) {
   );
 }
 
-function FileUpload({ label, onChange }) {
+function FileUpload({ label, onChange, className = "" }) {
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-sm font-medium text-gray-700">{label}</label>
+      <label className="text-sm  font-medium text-gray-700">{label}</label>
       <input
         type="file"
         onChange={onChange}
-        className="block w-full text-sm text-gray-500 
+        className={`block w-full text-sm text-gray-500 
           file:mr-4 file:py-2.5 file:px-4 file:rounded-md 
           file:border-0 file:text-sm file:font-semibold 
-          file:bg-accentPurple file:text-white hover:file:bg-mainPurple 
-          bg-white cursor-pointer"
+          file:bg-gray-500 file:text-white hover:file:bg-gray-700 
+          mt-3 
+          bg-white cursor-pointer ${className}`}
         required
       />
     </div>
